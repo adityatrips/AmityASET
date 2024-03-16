@@ -1,539 +1,559 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-    />
-    <title>Amity</title>
-    <link
-            rel="stylesheet"
-            href="css/output.css"
-    />
-    <script src="scripts/jquery.min.js"></script>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Amity</title>
+		<link
+			rel="stylesheet"
+			href="css/output.css"
+		/>
+		<script src="scripts/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/d52af9d5d1.js" crossorigin="anonymous"></script>
-</head>
+	</head>
 
-<body>
-<div
-        class="max-h-[10vh] min-h-[10vh] h-[10vh] fixed flex justify-center lg:justify-between lg:px-10 items-center w-full bg-white z-[25]"
->
-    <img
-            src="./images/mobilelogo.png"
-            class="h-[7.5vh]"
-            alt="mobilelogo"
-    />
-    <nav
-            id="large-nav"
-            class="m-5 hidden lg:flex justify-between items-center"
-    >
-        <a
-                href=""
-                class="nav-link"
-        >Infrastructure</a
-        >
-        <a
-                href=""
-                class="nav-link"
-        >Programs</a
-        >
-        <a
-                href=""
-                class="nav-link"
-        >Placements</a
-        >
-        <a
-                href=""
-                class="nav-link"
-        >Academics</a
-        >
-        <a
-                href=""
-                class="nav-link"
-        >Research</a
-        >
-        <a
-                href=""
-                class="nav-link"
-        >News</a
-        >
-        <a
-                href=""
-                class="nav-link"
-        >Admissions</a
-        >
-    </nav>
-</div>
+	<body class="m-0 p-0">
+		<div
+			class="h-[7rem] flex justify-center items-center w-full bg-white z-[25]"
+		>
+			<img
+				src="./images/auup-logo.png"
+				class="h-[4rem] sm:h-[5rem]"
+			/>
+		</div>
 
-<div
-        class="max-h-[10vh] h-[10vh] p-2 flex justify-center items-center fixed top-0 left-2 z-30 cursor-pointer lg:hidden"
-        onclick="toggleSidebar()"
->
-    <i class="bg-primary max-h-[7.5vh] p-2 fas fa-bars text-xl"></i>
-</div>
+		<div
+			class="h-[100px] p-5 flex justify-center items-center absolute top-0 left-0 z-50 cursor-pointer lg:hidden"
+			onclick="toggleSidebar()"
+		>
+			<i class="fas fa-bars text-xl"></i>
+		</div>
+		<div class="h-16 px-16 hidden lg:flex justify-evenly items-center w-full divide-x-2">
+			<a href="" class="text-lg text-center w-full text-gray-800">Infrastructure</a>
+			<a href="" class="text-lg text-center w-full text-gray-800">Programs</a>
+			<a href="" class="text-lg text-center w-full text-gray-800">Placements</a>
+			<a href="" class="text-lg text-center w-full text-gray-800">Academics</a>
+			<a href="" class="text-lg text-center w-full text-gray-800">Research</a>
+			<a href="" class="text-lg text-center w-full text-gray-800">News</a>
+			<a href="" class="text-lg text-center w-full text-gray-800">Admissions</a>
+		</div>
+		<!--
+		<div
+			class="h-[100px] fixed flex justify-center lg:justify-between lg:px-10 items-center w-full bg-white z-[25]"
+		>
+			<img
+				src="./images/mobilelogo.png"
+				class="w-fit h-fit"
+			/>
+			<nav
+				id="large-nav"
+				class="m-5 hidden lg:flex justify-between items-center"
+			>
+				<a
+					href=""
+					class="nav-link"
+					>Infrastructure</a
+				>
+				<a
+					href=""
+					class="nav-link"
+					>Programs</a
+				>
+				<a
+					href=""
+					class="nav-link"
+					>Placements</a
+				>
+				<a
+					href=""
+					class="nav-link"
+					>Academics</a
+				>
+				<a
+					href=""
+					class="nav-link"
+					>Research</a
+				>
+				<a
+					href=""
+					class="nav-link"
+					>News</a
+				>
+				<a
+					href=""
+					class="nav-link"
+					>Admissions</a
+				>
+			</nav>
+		</div>
 
-<div
-        id="sidebar"
-        class="w-[300px] fixed h-[100vh] transition-all duration-300 bg-white top-[0] z-20 -left-full"
->
-    <div class="flex flex-col h-[100vh] items-center justify-between">
-        <div class="flex flex-grow flex-col gap-1 m-[100px]">
-            <a
-                    href="index.html"
-                    class="w-[300px] text-xl font-bold uppercase px-4 text-black text-center"
-            >
-                Home
-                <a
-                        href="javascript:void(0)"
-                        class="w-[300px] px-4"
-                        onclick="toggleSidebarLink('about')"
-                >
-                    <p class="text-xl font-bold uppercase text-center text-black">
-                        About <i class="fas fa-chevron-down"></i>
-                    </p>
-                </a>
-                <div
-                        id="about"
-                        class="sidebar-link hidden flex flex-col justify-center items-center gap-2"
-                >
-                    <a class="w-[300px] text-center">Overview</a>
-                    <a class="w-[300px] text-center">Programmes Offered</a>
-                    <a class="w-[300px] text-center">Social Media</a>
-                </div>
-            </a>
-            <div>
-                <a
-                        href="javascript:void(0)"
-                        class="w-[300px] px-4"
-                        onclick="toggleSidebarLink('lifeatcse')"
-                >
-                    <p class="text-xl font-bold uppercase text-black">
-                        Life@CSE <i class="fas fa-chevron-down"></i>
-                    </p>
-                </a>
-                <div
-                        id="lifeatcse"
-                        class="sidebar-link hidden flex flex-col justify-center items-center gap-2"
-                >
-                    <a class="w-[300px] text-center" href="studentachievements.html">
-                        Student Participation & Achievements
-                    </a>
-                    <a href="#" class="w-[300px] text-center">Club / Committee Activities</a>
-                    <a href="#" class="w-[300px] text-center">Student Chapters</a>
-                    <a href="#" class="w-[300px] text-center">Parent Feedback</a>
-                    <a href="#" class="w-[300px] text-center">Industry Feedback</a>
-                </div>
-            </div>
-            <div>
-                <a
-                        href="javascript:void(0)"
-                        class="w-[300px] px-4"
-                        onclick="toggleSidebarLink('eventsatcse')"
-                >
-                    <p class="text-xl font-bold uppercase text-black">
-                        Events@CSE <i class="fas fa-chevron-down"></i>
-                    </p>
-                </a>
-                <div
-                        id="eventsatcse"
-                        class="sidebar-link hidden flex flex-col justify-center items-center gap-2"
-                >
-                    <a href="#" class="w-[300px] text-center">Conferences</a>
-                    <a href="#" class="w-[300px] text-center">Guest Lectures</a>
-                    <a href="#" class="w-[300px] text-center">Workshops</a>
-                </div>
-            </div>
-            <div>
-                <a
-                        href="javascript:void(0)"
-                        class="w-[300px] px-4"
-                        onclick="toggleSidebarLink('innovation')"
-                >
-                    <p class="text-xl font-bold uppercase text-black">
-                        Innovation <i class="fas fa-chevron-down"></i>
-                    </p>
-                </a>
-                <div
-                        id="innovation"
-                        class="sidebar-link hidden flex flex-col justify-center items-center gap-2"
-                >
-                    <a href="#" class="w-[300px] text-center">Publications/Patents/Projects</a>
-                    <a href="#" class="w-[300px] text-center">Entrepreneurs</a>
-                    <a href="#" class="w-[300px] text-center">Student Innovation</a>
-                    <a href="#" class="w-[300px] text-center">Student Awards</a>
-                </div>
-            </div>
-            <div>
-                <a
-                        href="javascript:void(0)"
-                        class="w-[300px] px-4"
-                        onclick="toggleSidebarLink('facultyatcse')"
-                >
-                    <p class="text-xl font-bold uppercase text-black">
-                        Faculty@CSE <i class="fas fa-chevron-down"></i>
-                    </p>
-                </a>
-                <div
-                        id="facultyatcse"
-                        class="sidebar-link hidden flex flex-col justify-center items-center gap-2"
-                >
-                    <a href="#" class="w-[300px] text-center">Honory Professors</a>
-                    <a href="#" class="w-[300px] text-center">Faculty</a>
-                </div>
-            </div>
-            <div>
-                <a
-                        href="javascript:void(0)"
-                        class="w-[300px] px-4"
-                        onclick="toggleSidebarLink('alumni')"
-                >
-                    <p class="text-xl font-bold uppercase text-black">
-                        Alumni <i class="fas fa-chevron-down"></i>
-                    </p>
-                </a>
-                <div
-                        id="alumni"
-                        class="sidebar-link hidden flex flex-col justify-center items-center gap-2"
-                >
-                    <a href="#" class="w-[300px] text-center">Alumni Awards</a>
-                    <a href="#" class="w-[300px] text-center">Alumni Messages</a>
-                </div>
-            </div>
-            <div>
-                <a
-                        href="javascript:void(0)"
-                        class="w-[300px] px-4"
-                        onclick="toggleSidebarLink('intlexposure')"
-                >
-                    <p class="text-xl font-bold uppercase text-black">
-                        International Exposure <i class="fas fa-chevron-down"></i>
-                    </p>
-                </a>
-                <div
-                        id="intlexposure"
-                        class="sidebar-link hidden flex flex-col justify-center items-center gap-2"
-                >
-                    <a href="#" class="w-[300px] text-center">
-                        International Student Exchange
-                    </a>
-                    <a href="#" class="w-[300px] text-center">
-                        Students at Foreign Universities
-                    </a>
-                    <a href="#" class="w-[300px] text-center">International Visits</a>
-                    <a href="#" class="w-[300px] text-center">International Speakers</a>
-                    <a href="#" class="w-[300px] text-center">Student's Feedback</a>
-                    <a href="#" class="w-[300px] text-center">Gallery</a>
-                </div>
-            </div>
-        </div>
+		<div
+			class="h-[100px] p-5 flex justify-center items-center fixed top-0 left-0 z-30 cursor-pointer lg:hidden"
+			onclick="toggleSidebar()"
+		>
+			<i class="bg-primary p-5 fas fa-bars text-xl"></i>
+		</div>
+-->
+		<div
+			id="sidebar"
+			class="w-[300px] fixed h-[100vh] transition-all duration-300 bg-white top-[0] z-30 -left-full"
+		>
+			<div class="flex flex-col h-[100vh] items-center justify-between">
+				<div class="flex flex-grow flex-col gap-1 m-[100px]">
+					<button
+						href="index.html"
+						class="w-[300px] text-xl font-bold uppercase px-4 py-2 text-black"
+					>
+						Home
+					</button>
+					<div>
+						<button
+							class="w-[300px] px-4 py-2"
+							onclick="toggleSidebarLink('about')"
+						>
+							<p class="text-xl font-bold uppercase text-black">
+								About <i class="fas fa-chevron-down"></i>
+							</p>
+						</button>
+						<div
+							id="about"
+							class="sidebar-link hidden flex flex-col justify-center items-center gap-2"
+						>
+							<button class="w-full py-2">Overview</button>
+							<button class="w-full py-2">Programmes Offered</button>
+							<button class="w-full py-2">Social Media</button>
+						</div>
+					</div>
+					<div>
+						<button
+							class="w-[300px] px-4 py-2"
+							onclick="toggleSidebarLink('lifeatcse')"
+						>
+							<p class="text-xl font-bold uppercase text-black">
+								Life@CSE <i class="fas fa-chevron-down"></i>
+							</p>
+						</button>
+						<div
+							id="lifeatcse"
+							class="sidebar-link hidden flex flex-col justify-center items-center gap-2"
+						>
+							<button class="w-full py-2">
+								Student Participation & Achievements
+							</button>
+							<button class="w-full py-2">Club / Committee Activities</button>
+							<button class="w-full py-2">Student Chapters</button>
+							<button class="w-full py-2">Parent Feedback</button>
+							<button class="w-full py-2">Industry Feedback</button>
+						</div>
+					</div>
+					<div>
+						<button
+							class="w-[300px] px-4 py-2"
+							onclick="toggleSidebarLink('eventsatcse')"
+						>
+							<p class="text-xl font-bold uppercase text-black">
+								Events@CSE <i class="fas fa-chevron-down"></i>
+							</p>
+						</button>
+						<div
+							id="eventsatcse"
+							class="sidebar-link hidden flex flex-col justify-center items-center gap-2"
+						>
+							<button class="w-full py-2">Conferences</button>
+							<button class="w-full py-2">Guest Lectures</button>
+							<button class="w-full py-2">Workshops</button>
+						</div>
+					</div>
+					<div>
+						<button
+							class="w-[300px] px-4 py-2"
+							onclick="toggleSidebarLink('eventsatcse')"
+						>
+							<p class="text-xl font-bold uppercase text-black">
+								Events@CSE <i class="fas fa-chevron-down"></i>
+							</p>
+						</button>
+						<div
+							id="eventsatcse"
+							class="sidebar-link hidden flex flex-col justify-center items-center gap-2"
+						>
+							<button class="w-full py-2">Conferences</button>
+							<button class="w-full py-2">Guest Lectures</button>
+							<button class="w-full py-2">Workshops</button>
+						</div>
+					</div>
+					<div>
+						<button
+							class="w-[300px] px-4 py-2"
+							onclick="toggleSidebarLink('innovation')"
+						>
+							<p class="text-xl font-bold uppercase text-black">
+								Innovation <i class="fas fa-chevron-down"></i>
+							</p>
+						</button>
+						<div
+							id="innovation"
+							class="sidebar-link hidden flex flex-col justify-center items-center gap-2"
+						>
+							<button class="w-full py-2">Publications/Patents/Projects</button>
+							<button class="w-full py-2">Entrepreneurs</button>
+							<button class="w-full py-2">Student Innovation</button>
+							<button class="w-full py-2">Student Awards</button>
+						</div>
+					</div>
+					<div>
+						<button
+							class="w-[300px] px-4 py-2"
+							onclick="toggleSidebarLink('facultyatcse')"
+						>
+							<p class="text-xl font-bold uppercase text-black">
+								Faculty@CSE <i class="fas fa-chevron-down"></i>
+							</p>
+						</button>
+						<div
+							id="facultyatcse"
+							class="sidebar-link hidden flex flex-col justify-center items-center gap-2"
+						>
+							<button class="w-full py-2">Honory Professors</button>
+							<button class="w-full py-2">Faculty</button>
+						</div>
+					</div>
+					<div>
+						<button
+							class="w-[300px] px-4 py-2"
+							onclick="toggleSidebarLink('alumni')"
+						>
+							<p class="text-xl font-bold uppercase text-black">
+								Alumni <i class="fas fa-chevron-down"></i>
+							</p>
+						</button>
+						<div
+							id="alumni"
+							class="sidebar-link hidden flex flex-col justify-center items-center gap-2"
+						>
+							<button class="w-full py-2">Alumni Awards</button>
+							<button class="w-full py-2">Alumni Messages</button>
+						</div>
+					</div>
+					<div>
+						<button
+							class="w-[300px] px-4 py-2"
+							onclick="toggleSidebarLink('intlexposure')"
+						>
+							<p class="text-xl font-bold uppercase text-black">
+								International Exposure <i class="fas fa-chevron-down"></i>
+							</p>
+						</button>
+						<div
+							id="intlexposure"
+							class="sidebar-link hidden flex flex-col justify-center items-center gap-2"
+						>
+							<button class="w-full py-2">
+								International Student Exchange
+							</button>
+							<button class="w-full py-2">
+								Students at Foreign Universities
+							</button>
+							<button class="w-full py-2">International Visits</button>
+							<button class="w-full py-2">International Speakers</button>
+							<button class="w-full py-2">Student's Feedback</button>
+							<button class="w-full py-2">Gallery</button>
+						</div>
+					</div>
+				</div>
 
-        <div class="bg-white p-5 gap-1 ">
-            <img
-                    id="logo"
-                    src="images/logo.png"
-                    alt="ASET Logo"
-            />
-            <div class="grid grid-cols-3 mt-5">
-                <a
-                        href="http://www.facebook.com/pages/Amity-University/114937615195506"
-                        target="_blank"
-                        class="flex justify-center items-center"
-                >
-                    <i class="fab fa-facebook text-secondary"></i>
-                </a>
-                <a
-                        href="http://twitter.com/AmityUni"
-                        target="_blank"
-                        class="flex justify-center items-center"
-                >
-                    <i class="fab fa-twitter text-secondary"></i>
-                </a>
-                <a
-                        href="http://www.youtube.com/amityuniversity"
-                        target="_blank"
-                        class="flex justify-center items-center"
-                >
-                    <i class="fab fa-youtube text-secondary"></i>
-                </a>
+				<div class="bg-white p-5 gap-1">
+					<img
+						id="logo"
+						src="images/logo.png"
+						alt="ASET Logo"
+					/>
+					<div class="grid grid-cols-3 mt-5">
+						<a
+							href="http://www.facebook.com/pages/Amity-University/114937615195506"
+							target="_blank"
+							class="flex justify-center items-center"
+						>
+							<i class="fab fa-facebook text-secondary"></i>
+						</a>
+						<a
+							href="http://twitter.com/AmityUni"
+							target="_blank"
+							class="flex justify-center items-center"
+						>
+							<i class="fab fa-twitter text-secondary"></i>
+						</a>
+						<a
+							href="http://www.youtube.com/amityuniversity"
+							target="_blank"
+							class="flex justify-center items-center"
+						>
+							<i class="fab fa-youtube text-secondary"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="relative h-[500px] overflow-hidden">
+			<img src="./images/Amity-campus.jpg" style="filter: blur(3px);" class="w-full bg-center h-[500px] object-cover absolute z-0">
+			<div style="text-shadow: 0 0 2px #000;" class="text-7xl text-white absolute z-20 font-extrabold left-2/4 top-2/4 -translate-x-1/2 -translate-y-1/2 w-full text-center">Computer Science & Engineering</div>
+		</div>
+<!--
+		<div class="relative">
+			<img
+				src="images/Amity-campus.jpg"
+				alt="Amity Campus"
+				class="w-full object-cover"
+				style="filter: blur(2px)"
+			/>
+			<div
+				class="absolute top-0 left-0 w-full h-full bg-opacity-50 flex justify-center items-center"
+			>
+				<h1
+					class="uppercase text-4xl font-bold text-center p-5 text-black bg-white w-full"
+				>
+					Computer Science & Engineering
+				</h1>
+			</div>
+		</div>
+		-->
 
-            </div>
-        </div>
-    </div>
-</div>
+		<div class="p-5">
+			<h1 class="title">About us</h1>
+			<p>
+				Department of Computer Science & Engineering was formed in 2003 at Amity
+				University, Noida. Since its inception, the department has been
+				recognized all over the world for excellence in research and teaching.
+				It also provides a supportive, friendly and challenging environment for
+				teaching, learning and research.
+			</p>
+			<p>
+				Today, the Department has a vibrant student body numbering about more
+				than 2500 students and many eminent professors with PhD/PhD pursuing.
+				The Department also offers several attractive international exposures in
+				terms of student exchange program, Industrial Internship, Minor Project
+				and Major Project for UG and PG Programs.
+			</p>
+			<p>
+				Department is nurtured by its clubs/committee and research groups. These
+				clubs offer students the chance to gain experience in their interest
+				areas and network with their peers. Each research group holds regular
+				meetings and hold seminars to discuss current research topics and
+				results.
+			</p>
+		</div>
 
-<div class="relative pt-[10vh]">
-    <img
-            src="images/Amity-campus.jpg"
-            alt="Amity Campus"
-            class="w-full max-h-96 object-cover"
-            style="filter: blur(2px)"
-    />
-    <div
-            class="absolute top-0 left-0 w-full h-full bg-opacity-50 flex justify-center items-center"
-    >
-        <h1
-                class="uppercase text-4xl font-bold text-center p-5 text-black bg-white w-full"
-        >
-            Computer Science & Engineering
-        </h1>
-    </div>
-</div>
+		<div class="p-5">
+			<h1 class="title">HoI's Message</h1>
+			
+		<blockquote class="relative m-10 md:m-20">
+			<svg class="absolute -top-6 -start-8 size-16 text-gray-200 " width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+			  <path d="M7.39762 10.3C7.39762 11.0733 7.14888 11.7 6.6514 12.18C6.15392 12.6333 5.52552 12.86 4.76621 12.86C3.84979 12.86 3.09047 12.5533 2.48825 11.94C1.91222 11.3266 1.62421 10.4467 1.62421 9.29999C1.62421 8.07332 1.96459 6.87332 2.64535 5.69999C3.35231 4.49999 4.33418 3.55332 5.59098 2.85999L6.4943 4.25999C5.81354 4.73999 5.26369 5.27332 4.84476 5.85999C4.45201 6.44666 4.19017 7.12666 4.05926 7.89999C4.29491 7.79332 4.56983 7.73999 4.88403 7.73999C5.61716 7.73999 6.21938 7.97999 6.69067 8.45999C7.16197 8.93999 7.39762 9.55333 7.39762 10.3ZM14.6242 10.3C14.6242 11.0733 14.3755 11.7 13.878 12.18C13.3805 12.6333 12.7521 12.86 11.9928 12.86C11.0764 12.86 10.3171 12.5533 9.71484 11.94C9.13881 11.3266 8.85079 10.4467 8.85079 9.29999C8.85079 8.07332 9.19117 6.87332 9.87194 5.69999C10.5789 4.49999 11.5608 3.55332 12.8176 2.85999L13.7209 4.25999C13.0401 4.73999 12.4903 5.27332 12.0713 5.85999C11.6786 6.44666 11.4168 7.12666 11.2858 7.89999C11.5215 7.79332 11.7964 7.73999 12.1106 7.73999C12.8437 7.73999 13.446 7.97999 13.9173 8.45999C14.3886 8.93999 14.6242 9.55333 14.6242 10.3Z" fill="currentColor"/>
+			</svg>
+		  
+			<div class="relative z-10">
+			  <p class="text-gray-800 font-medium text-2xl "><em>AMITY School of Engineering and Technology aim to develop globally adaptable professionals with social sensitivity. The institute is all set to bring out the potential within each student and provide proper guidance so that their potentials can be utilized to make them future engineers capable of meeting any challenge that will be faced by them after leaving the university. The university provides full support to improve their communication skills, critical thinking abilities, moral values and sense of responsibility.
+				All efforts are made to improve the creativity and problem solving abilities of the students so that they can contribute their best to the society and the country.
+				Today we are all witnessing the impact of globalization and liberalization. It is true that the technological transformation has impacted all our lives. In this era of globalization and liberalization there are lot many challenges. As an academic institute it is necessary to address these challenges. At institute level we are constantly taking efforts to ensure that our students will showcase their academic talent with high moral values. Our students being Engineers will contribute and for sure will keep Social Commitment. Faculty-members guide and monitor students by participating in their academic, research, sports & cultural pursuits. We want our students to be committed, dedicated to their goals along with integrity and concern for the environment and rural society they live in.
+				We rely on a pedagogy that promotes creativity and innovation and teaching-learning practices of high standards. Creativity flourishes in an atmosphere that is free, friendly and above all, democratic and participatory in nature. Every course is designed, delivered and monitored in a manner that will add a significant value to a student. We equally emphasize on the development of core human values, mental well-being and physical well-being of our students.</em></p>
+			</div>
+		  
+			<footer class="mt-12">
+			  <div class="flex items-center">
+				<div class="flex-shrink-0">
+				  <img class="size-20 rounded-full" src="./images/mkpandey.jpeg" alt="Image Description">
+				</div>
+				<div class="ms-4">
+				  <div class="text-xl font-semibold text-black ">Prof. (Dr.) Manoj Kumar Pandey Director</div>
+				  <div class="text-md text-gray-500">Head of Institution</div>
+				</div>
+			  </div>
+			</footer>
+		  </blockquote>
+<!--
+			<div class="flex justify-center items-center">
+				<img
+					src="images/mkpandey.jpeg"
+					alt="HoI"
+					class="w-[200px] h-[200px] rounded-full"
+				/>
+			</div>
+			<p>
+				Amity School of Engineering and Technology aim to develop globally
+				adaptable professionals with social sensitivity. The institute is all
+				set to bring out the potential within each student and provide proper
+				guidance so that their potentials can be utilized to make them future
+				engineers capable of meeting any challenge that will be faced by them
+				after leaving the university. The university provides full support to
+				improve their communication skills, critical thinking abilities, moral
+				values and sense of responsibility.
+			</p>
+			<p>
+				All efforts are made to improve the creativity and problem solving
+				abilities of the students so that they can contribute their best to the
+				society and the country.
+			</p>
+			<p>
+				Today we are all witnessing the impact of globalization and
+				liberalization. It is true that the technological transformation has
+				impacted all our lives. In this era of globalization and liberalization
+				there are lot many challenges. As an academic institute it is necessary
+				to address these challenges. At institute level we are constantly taking
+				efforts to ensure that our students will showcase their academic talent
+				with high moral values. Our students being Engineers will contribute and
+				for sure will keep Social Commitment. Faculty-members guide and monitor
+				students by participating in their academic, research, sports & cultural
+				pursuits. We want our students to be committed, dedicated to their goals
+				along with integrity and concern for the environment and rural society
+				they live in.
+			</p>
+			<p>
+				We rely on a pedagogy that promotes creativity and innovation and
+				teaching-learning practices of high standards. Creativity flourishes in
+				an atmosphere that is free, friendly and above all, democratic and
+				participatory in nature. Every course is designed, delivered and
+				monitored in a manner that will add a significant value to a student. We
+				equally emphasize on the development of core human values, mental
+				well-being and physical well-being of our students.
+			</p>
+			<br />
+			<p class="font-bold">
+				Prof. (Dr.) Manoj Kumar Pandey Director - Amity School of
+			</p>
+			<p>Engineering & Technology Professor, Department of</p>
+			<p>Electronics & Communication Engineering</p>
+		</div>
+-->
+		<div class="py-10 px-5">
+			<h1 class="title">Placement Partners</h1>
 
+			<div class="grid grid-cols-4 grid-rows-4">
+				<div class="flex justify-center items-center">
+					<img
+						src="images/accenture.jpg"
+						alt="accenture"
+					/>
+				</div>
+				<div class="flex justify-center items-center">
+					<img
+						src="images/british-gas.jpg"
+						alt="british-gas"
+					/>
+				</div>
+				<div class="flex justify-center items-center">
+					<img
+						src="images/capegemini.jpg"
+						alt="capegemini"
+					/>
+				</div>
+				<div class="flex justify-center items-center">
+					<img
+						src="images/csc.jpg"
+						alt="csc"
+					/>
+				</div>
+				<div class="flex justify-center items-center">
+					<img
+						src="images/dell.jpg"
+						alt="dell"
+					/>
+				</div>
+				<div class="flex justify-center items-center">
+					<img
+						src="images/flipkart.jpg"
+						alt="flipkart"
+					/>
+				</div>
+				<div class="flex justify-center items-center">
+					<img
+						src="images/ibm.jpg"
+						alt="ibm"
+					/>
+				</div>
+				<div class="flex justify-center items-center">
+					<img
+						src="images/icicic.jpg"
+						alt="icicic"
+					/>
+				</div>
+				<div class="flex justify-center items-center">
+					<img
+						src="images/igate.jpg"
+						alt="igate"
+					/>
+				</div>
+				<div class="flex justify-center items-center">
+					<img
+						src="images/indian-navy.jpg"
+						alt="indian-navy"
+					/>
+				</div>
+				<div class="flex justify-center items-center">
+					<img
+						src="images/indianoil.jpg"
+						alt="indianoil"
+					/>
+				</div>
+				<div class="flex justify-center items-center">
+					<img
+						src="images/microsoft.jpg"
+						alt="microsoft"
+					/>
+				</div>
+				<div class="flex justify-center items-center">
+					<img
+						src="images/tata.jpg"
+						alt="tata"
+					/>
+				</div>
+				<div class="flex justify-center items-center">
+					<img
+						src="images/unilibwe.jpg"
+						alt="unilibwe"
+					/>
+				</div>
+				<div class="flex justify-center items-center">
+					<img
+						src="images/videocon.jpg"
+						alt="videocon"
+					/>
+				</div>
+				<div class="flex justify-center items-center">
+					<img
+						src="images/wipro.jpg"
+						alt="wipro"
+					/>
+				</div>
+			</div>
+		</div>
 
-<div class="p-5">
-    <h1 class="title">About us</h1>
-    <p>
-        Department of Computer Science & Engineering was formed in 2003 at Amity
-        University, Noida. Since its inception, the department has been
-        recognized all over the world for excellence in research and teaching.
-        It also provides a supportive, friendly and challenging environment for
-        teaching, learning and research.
-    </p>
-    <p>
-        Today, the Department has a vibrant student body numbering about more
-        than 2500 students and many eminent professors with PhD/PhD pursuing.
-        The Department also offers several attractive international exposures in
-        terms of student exchange program, Industrial Internship, Minor Project
-        and Major Project for UG and PG Programs.
-    </p>
-    <p>
-        Department is nurtured by its clubs/committee and research groups. These
-        clubs offer students the chance to gain experience in their interest
-        areas and network with their peers. Each research group holds regular
-        meetings and hold seminars to discuss current research topics and
-        results.
-    </p>
-</div>
+		<div
+			id="overlay"
+			class="bg-black fixed top-0 left-0 w-full h-full bg-opacity-50 z-10 hidden"
+		></div>
 
-<div class="p-5">
-    <h1 class="title">HoI's Message</h1>
+		<script>
+			function toggleSidebar() {
+				document.querySelector('#sidebar').classList.toggle('left-0');
+				document.querySelector('#sidebar').classList.toggle('-left-full');
+				$('#overlay').toggleClass('hidden');
+			}
 
-    <blockquote class="relative m-20">
-        <svg class="absolute -top-6 -start-8 size-16 text-gray-200 " width="16" height="16" viewBox="0 0 16 16"
-             fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M7.39762 10.3C7.39762 11.0733 7.14888 11.7 6.6514 12.18C6.15392 12.6333 5.52552 12.86 4.76621 12.86C3.84979 12.86 3.09047 12.5533 2.48825 11.94C1.91222 11.3266 1.62421 10.4467 1.62421 9.29999C1.62421 8.07332 1.96459 6.87332 2.64535 5.69999C3.35231 4.49999 4.33418 3.55332 5.59098 2.85999L6.4943 4.25999C5.81354 4.73999 5.26369 5.27332 4.84476 5.85999C4.45201 6.44666 4.19017 7.12666 4.05926 7.89999C4.29491 7.79332 4.56983 7.73999 4.88403 7.73999C5.61716 7.73999 6.21938 7.97999 6.69067 8.45999C7.16197 8.93999 7.39762 9.55333 7.39762 10.3ZM14.6242 10.3C14.6242 11.0733 14.3755 11.7 13.878 12.18C13.3805 12.6333 12.7521 12.86 11.9928 12.86C11.0764 12.86 10.3171 12.5533 9.71484 11.94C9.13881 11.3266 8.85079 10.4467 8.85079 9.29999C8.85079 8.07332 9.19117 6.87332 9.87194 5.69999C10.5789 4.49999 11.5608 3.55332 12.8176 2.85999L13.7209 4.25999C13.0401 4.73999 12.4903 5.27332 12.0713 5.85999C11.6786 6.44666 11.4168 7.12666 11.2858 7.89999C11.5215 7.79332 11.7964 7.73999 12.1106 7.73999C12.8437 7.73999 13.446 7.97999 13.9173 8.45999C14.3886 8.93999 14.6242 9.55333 14.6242 10.3Z"
-                  fill="currentColor"/>
-        </svg>
+			function toggleSidebarLink(link) {
+				const sidebarLinks = document.querySelectorAll('.sidebar-link');
+				const targetLink = document.querySelector('#' + link);
 
-        <div class="relative z-10">
-            <p class="text-gray-800 font-medium text-2xl "><em>AMITY School of Engineering and Technology aim to develop
-                globally adaptable professionals with social sensitivity. The institute is all set to bring out the
-                potential within each student and provide proper guidance so that their potentials can be utilized to
-                make them future engineers capable of meeting any challenge that will be faced by them after leaving the
-                university. The university provides full support to improve their communication skills, critical
-                thinking abilities, moral values and sense of responsibility.
-                All efforts are made to improve the creativity and problem solving abilities of the students so that
-                they can contribute their best to the society and the country.
-                Today we are all witnessing the impact of globalization and liberalization. It is true that the
-                technological transformation has impacted all our lives. In this era of globalization and liberalization
-                there are lot many challenges. As an academic institute it is necessary to address these challenges. At
-                institute level we are constantly taking efforts to ensure that our students will showcase their
-                academic talent with high moral values. Our students being Engineers will contribute and for sure will
-                keep Social Commitment. Faculty-members guide and monitor students by participating in their academic,
-                research, sports & cultural pursuits. We want our students to be committed, dedicated to their goals
-                along with integrity and concern for the environment and rural society they live in.
-                We rely on a pedagogy that promotes creativity and innovation and teaching-learning practices of high
-                standards. Creativity flourishes in an atmosphere that is free, friendly and above all, democratic and
-                participatory in nature. Every course is designed, delivered and monitored in a manner that will add a
-                significant value to a student. We equally emphasize on the development of core human values, mental
-                well-being and physical well-being of our students.</em></p>
-        </div>
+				sidebarLinks.forEach((sidebarLink) => {
+					if (sidebarLink !== targetLink) {
+						sidebarLink.classList.add('hidden');
+					}
+				});
 
-        <footer class="mt-12">
-            <div class="flex items-center">
-                <div class="flex-shrink-0">
-                    <img class="size-20 rounded-full" src="./images/mkpandey.jpeg" alt="Image Description">
-                </div>
-                <div class="ms-4">
-                    <div class="text-xl font-semibold text-black ">Prof. (Dr.) Manoj Kumar Pandey Director</div>
-                    <div class="text-md text-gray-500">Head of Institution</div>
-                </div>
-            </div>
-        </footer>
-    </blockquote>
-    <!--
-                <div class="flex justify-center items-center">
-                    <img
-                        src="images/mkpandey.jpeg"
-                        alt="HoI"
-                        class="w-[200px] h-[200px] rounded-full"
-                    />
-                </div>
-                <p>
-                    Amity School of Engineering and Technology aim to develop globally
-                    adaptable professionals with social sensitivity. The institute is all
-                    set to bring out the potential within each student and provide proper
-                    guidance so that their potentials can be utilized to make them future
-                    engineers capable of meeting any challenge that will be faced by them
-                    after leaving the university. The university provides full support to
-                    improve their communication skills, critical thinking abilities, moral
-                    values and sense of responsibility.
-                </p>
-                <p>
-                    All efforts are made to improve the creativity and problem solving
-                    abilities of the students so that they can contribute their best to the
-                    society and the country.
-                </p>
-                <p>
-                    Today we are all witnessing the impact of globalization and
-                    liberalization. It is true that the technological transformation has
-                    impacted all our lives. In this era of globalization and liberalization
-                    there are lot many challenges. As an academic institute it is necessary
-                    to address these challenges. At institute level we are constantly taking
-                    efforts to ensure that our students will showcase their academic talent
-                    with high moral values. Our students being Engineers will contribute and
-                    for sure will keep Social Commitment. Faculty-members guide and monitor
-                    students by participating in their academic, research, sports & cultural
-                    pursuits. We want our students to be committed, dedicated to their goals
-                    along with integrity and concern for the environment and rural society
-                    they live in.
-                </p>
-                <p>
-                    We rely on a pedagogy that promotes creativity and innovation and
-                    teaching-learning practices of high standards. Creativity flourishes in
-                    an atmosphere that is free, friendly and above all, democratic and
-                    participatory in nature. Every course is designed, delivered and
-                    monitored in a manner that will add a significant value to a student. We
-                    equally emphasize on the development of core human values, mental
-                    well-being and physical well-being of our students.
-                </p>
-                <br />
-                <p class="font-bold">
-                    Prof. (Dr.) Manoj Kumar Pandey Director - Amity School of
-                </p>
-                <p>Engineering & Technology Professor, Department of</p>
-                <p>Electronics & Communication Engineering</p>
-            </div>
-    -->
-    <div class="py-10 px-5">
-        <h1 class="title">Placement Partners</h1>
-
-        <div class="grid grid-cols-4 grid-rows-4">
-            <div class="flex justify-center items-center">
-                <img
-                        src="images/accenture.jpg"
-                        alt="accenture"
-                />
-            </div>
-            <div class="flex justify-center items-center">
-                <img
-                        src="images/british-gas.jpg"
-                        alt="british-gas"
-                />
-            </div>
-            <div class="flex justify-center items-center">
-                <img
-                        src="images/capegemini.jpg"
-                        alt="capegemini"
-                />
-            </div>
-            <div class="flex justify-center items-center">
-                <img
-                        src="images/csc.jpg"
-                        alt="csc"
-                />
-            </div>
-            <div class="flex justify-center items-center">
-                <img
-                        src="images/dell.jpg"
-                        alt="dell"
-                />
-            </div>
-            <div class="flex justify-center items-center">
-                <img
-                        src="images/flipkart.jpg"
-                        alt="flipkart"
-                />
-            </div>
-            <div class="flex justify-center items-center">
-                <img
-                        src="images/ibm.jpg"
-                        alt="ibm"
-                />
-            </div>
-            <div class="flex justify-center items-center">
-                <img
-                        src="images/icicic.jpg"
-                        alt="icicic"
-                />
-            </div>
-            <div class="flex justify-center items-center">
-                <img
-                        src="images/igate.jpg"
-                        alt="igate"
-                />
-            </div>
-            <div class="flex justify-center items-center">
-                <img
-                        src="images/indian-navy.jpg"
-                        alt="indian-navy"
-                />
-            </div>
-            <div class="flex justify-center items-center">
-                <img
-                        src="images/indianoil.jpg"
-                        alt="indianoil"
-                />
-            </div>
-            <div class="flex justify-center items-center">
-                <img
-                        src="images/microsoft.jpg"
-                        alt="microsoft"
-                />
-            </div>
-            <div class="flex justify-center items-center">
-                <img
-                        src="images/tata.jpg"
-                        alt="tata"
-                />
-            </div>
-            <div class="flex justify-center items-center">
-                <img
-                        src="images/unilibwe.jpg"
-                        alt="unilibwe"
-                />
-            </div>
-            <div class="flex justify-center items-center">
-                <img
-                        src="images/videocon.jpg"
-                        alt="videocon"
-                />
-            </div>
-            <div class="flex justify-center items-center">
-                <img
-                        src="images/wipro.jpg"
-                        alt="wipro"
-                />
-            </div>
-        </div>
-    </div>
-</div>
-
-<div
-        id="overlay"
-        class="bg-black fixed top-0 left-0 w-full h-full bg-opacity-50 z-10 hidden"
-></div>
-
-<script>
-    function toggleSidebar() {
-        document.querySelector('#sidebar').classList.toggle('left-0');
-        document.querySelector('#sidebar').classList.toggle('-left-full');
-        $('#overlay').toggleClass('hidden');
-    }
-
-    function toggleSidebarLink(link) {
-        const sidebarLinks = document.querySelectorAll('.sidebar-link');
-        const targetLink = document.querySelector('#' + link);
-
-        sidebarLinks.forEach((sidebarLink) => {
-            if (sidebarLink !== targetLink) {
-                sidebarLink.classList.add('hidden');
-            }
-        });
-
-        targetLink.classList.toggle('hidden');
-    }
-</script>
-</body>
+				targetLink.classList.toggle('hidden');
+			}
+		</script>
+	</body>
 </html>
