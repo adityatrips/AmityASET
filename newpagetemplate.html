@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+    />
+    <title>Amity</title>
+    <link
+            rel="stylesheet"
+            href="css/output.css"
+    />
+    <script src="scripts/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/d52af9d5d1.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div
+        class="max-h-[10vh] min-h-[10vh] h-[10vh] fixed flex justify-center lg:justify-between lg:px-10 items-center w-full bg-white z-[25]"
+>
+    <img
+            src="./images/mobilelogo.png"
+            class="h-[7.5vh]"
+    />
+    <nav
+            id="large-nav"
+            class="m-5 hidden lg:flex justify-between items-center"
+    >
+        <a
+                href=""
+                class="nav-link"
+        >Infrastructure</a
+        >
+        <a
+                href=""
+                class="nav-link"
+        >Programs</a
+        >
+        <a
+                href=""
+                class="nav-link"
+        >Placements</a
+        >
+        <a
+                href=""
+                class="nav-link"
+        >Academics</a
+        >
+        <a
+                href=""
+                class="nav-link"
+        >Research</a
+        >
+        <a
+                href=""
+                class="nav-link"
+        >News</a
+        >
+        <a
+                href=""
+                class="nav-link"
+        >Admissions</a
+        >
+    </nav>
+</div>
+
+<div
+        class="max-h-[10vh] h-[10vh] p-2 flex justify-center items-center fixed top-0 left-2 z-30 cursor-pointer lg:hidden"
+        onclick="toggleSidebar()"
+>
+    <i class="bg-primary max-h-[7.5vh] p-2 fas fa-bars text-xl"></i>
+</div>
+
+<div
+        id="sidebar"
+        class="w-[300px] fixed h-[100vh] transition-all duration-300 bg-white top-[0] z-20 -left-full"
+>
+    <div class="flex flex-col h-[100vh] items-center justify-between">
+        <div class="flex flex-grow flex-col gap-1 m-[100px]">
+            <a
+                    href="index.html"
+                    class="w-[300px] text-xl font-bold uppercase px-4 text-black text-center"
+            >
+                Home
+                <a
+                        href="javascript:void(0)"
+                        class="w-[300px] px-4"
+                        onclick="toggleSidebarLink('about')"
+                >
+                    <p class="text-xl font-bold uppercase text-center text-black">
+                        About <i class="fas fa-chevron-down"></i>
+                    </p>
+                </a>
+                <div
+                        id="about"
+                        class="sidebar-link hidden flex flex-col justify-center items-center gap-2"
+                >
+                    <a class="w-[300px] text-center">Overview</a>
+                    <a class="w-[300px] text-center">Programmes Offered</a>
+                    <a class="w-[300px] text-center">Social Media</a>
+                </div>
+            </a>
+            <div>
+                <a
+                        href="javascript:void(0)"
+                        class="w-[300px] px-4"
+                        onclick="toggleSidebarLink('lifeatcse')"
+                >
+                    <p class="text-xl font-bold uppercase text-black">
+                        Life@CSE <i class="fas fa-chevron-down"></i>
+                    </p>
+                </a>
+                <div
+                        id="lifeatcse"
+                        class="sidebar-link hidden flex flex-col justify-center items-center gap-2"
+                >
+                    <a class="w-[300px] text-center" href="studentachievements.html">
+                        Student Participation & Achievements
+                    </a>
+                    <a href="#" class="w-[300px] text-center">Club / Committee Activities</a>
+                    <a href="#" class="w-[300px] text-center">Student Chapters</a>
+                    <a href="#" class="w-[300px] text-center">Parent Feedback</a>
+                    <a href="#" class="w-[300px] text-center">Industry Feedback</a>
+                </div>
+            </div>
+            <div>
+                <a
+                        href="javascript:void(0)"
+                        class="w-[300px] px-4"
+                        onclick="toggleSidebarLink('eventsatcse')"
+                >
+                    <p class="text-xl font-bold uppercase text-black">
+                        Events@CSE <i class="fas fa-chevron-down"></i>
+                    </p>
+                </a>
+                <div
+                        id="eventsatcse"
+                        class="sidebar-link hidden flex flex-col justify-center items-center gap-2"
+                >
+                    <a href="#" class="w-[300px] text-center">Conferences</a>
+                    <a href="#" class="w-[300px] text-center">Guest Lectures</a>
+                    <a href="#" class="w-[300px] text-center">Workshops</a>
+                </div>
+            </div>
+            <div>
+                <a
+                        href="javascript:void(0)"
+                        class="w-[300px] px-4"
+                        onclick="toggleSidebarLink('innovation')"
+                >
+                    <p class="text-xl font-bold uppercase text-black">
+                        Innovation <i class="fas fa-chevron-down"></i>
+                    </p>
+                </a>
+                <div
+                        id="innovation"
+                        class="sidebar-link hidden flex flex-col justify-center items-center gap-2"
+                >
+                    <a href="#" class="w-[300px] text-center">Publications/Patents/Projects</a>
+                    <a href="#" class="w-[300px] text-center">Entrepreneurs</a>
+                    <a href="#" class="w-[300px] text-center">Student Innovation</a>
+                    <a href="#" class="w-[300px] text-center">Student Awards</a>
+                </div>
+            </div>
+            <div>
+                <a
+                        href="javascript:void(0)"
+                        class="w-[300px] px-4"
+                        onclick="toggleSidebarLink('facultyatcse')"
+                >
+                    <p class="text-xl font-bold uppercase text-black">
+                        Faculty@CSE <i class="fas fa-chevron-down"></i>
+                    </p>
+                </a>
+                <div
+                        id="facultyatcse"
+                        class="sidebar-link hidden flex flex-col justify-center items-center gap-2"
+                >
+                    <a href="#" class="w-[300px] text-center">Honory Professors</a>
+                    <a href="#" class="w-[300px] text-center">Faculty</a>
+                </div>
+            </div>
+            <div>
+                <a
+                        href="javascript:void(0)"
+                        class="w-[300px] px-4"
+                        onclick="toggleSidebarLink('alumni')"
+                >
+                    <p class="text-xl font-bold uppercase text-black">
+                        Alumni <i class="fas fa-chevron-down"></i>
+                    </p>
+                </a>
+                <div
+                        id="alumni"
+                        class="sidebar-link hidden flex flex-col justify-center items-center gap-2"
+                >
+                    <a href="#" class="w-[300px] text-center">Alumni Awards</a>
+                    <a href="#" class="w-[300px] text-center">Alumni Messages</a>
+                </div>
+            </div>
+            <div>
+                <a
+                        href="javascript:void(0)"
+                        class="w-[300px] px-4"
+                        onclick="toggleSidebarLink('intlexposure')"
+                >
+                    <p class="text-xl font-bold uppercase text-black">
+                        International Exposure <i class="fas fa-chevron-down"></i>
+                    </p>
+                </a>
+                <div
+                        id="intlexposure"
+                        class="sidebar-link hidden flex flex-col justify-center items-center gap-2"
+                >
+                    <a href="#" class="w-[300px] text-center">
+                        International Student Exchange
+                    </a>
+                    <a href="#" class="w-[300px] text-center">
+                        Students at Foreign Universities
+                    </a>
+                    <a href="#" class="w-[300px] text-center">International Visits</a>
+                    <a href="#" class="w-[300px] text-center">International Speakers</a>
+                    <a href="#" class="w-[300px] text-center">Student's Feedback</a>
+                    <a href="#" class="w-[300px] text-center">Gallery</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white p-5 gap-1 ">
+            <img
+                    id="logo"
+                    src="images/logo.png"
+                    alt="ASET Logo"
+            />
+            <div class="grid grid-cols-3 mt-5">
+                <a
+                        href="http://www.facebook.com/pages/Amity-University/114937615195506"
+                        target="_blank"
+                        class="flex justify-center items-center"
+                >
+                    <i class="fab fa-facebook text-secondary"></i>
+                </a>
+                <a
+                        href="http://twitter.com/AmityUni"
+                        target="_blank"
+                        class="flex justify-center items-center"
+                >
+                    <i class="fab fa-twitter text-secondary"></i>
+                </a>
+                <a
+                        href="http://www.youtube.com/amityuniversity"
+                        target="_blank"
+                        class="flex justify-center items-center"
+                >
+                    <i class="fab fa-youtube text-secondary"></i>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Add your code here-->
+
+<div
+        id="overlay"
+        class="bg-black fixed top-0 left-0 w-full h-full bg-opacity-50 z-10 hidden"
+></div>
+
+<script>
+    function toggleSidebar() {
+        document.querySelector('#sidebar').classList.toggle('left-0');
+        document.querySelector('#sidebar').classList.toggle('-left-full');
+        $('#overlay').toggleClass('hidden');
+    }
+
+    function toggleSidebarLink(link) {
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        const targetLink = document.querySelector('#' + link);
+
+        sidebarLinks.forEach((sidebarLink) => {
+            if (sidebarLink !== targetLink) {
+                sidebarLink.classList.add('hidden');
+            }
+        });
+
+        targetLink.classList.toggle('hidden');
+    }
+</script>
+</body>
+</html>
