@@ -34,60 +34,59 @@
 
 	<body>
 		<div
-			class="h-[100px] flex justify-center items-center w-full bg-white z-[25]"
+			class="h-[100px] fixed flex justify-center lg:justify-between lg:px-10 items-center w-full bg-white z-[25]"
 		>
 			<img
 				src="./images/mobilelogo.png"
 				class="w-fit h-fit"
 			/>
+			<nav
+				id="large-nav"
+				class="m-5 hidden lg:flex justify-between items-center"
+			>
+				<a
+					href=""
+					class="nav-link"
+					>Infrastructure</a
+				>
+				<a
+					href=""
+					class="nav-link"
+					>Programs</a
+				>
+				<a
+					href=""
+					class="nav-link"
+					>Placements</a
+				>
+				<a
+					href=""
+					class="nav-link"
+					>Academics</a
+				>
+				<a
+					href=""
+					class="nav-link"
+					>Research</a
+				>
+				<a
+					href=""
+					class="nav-link"
+					>News</a
+				>
+				<a
+					href=""
+					class="nav-link"
+					>Admissions</a
+				>
+			</nav>
 		</div>
-
-		<nav
-			id="large-nav"
-			class="m-5 hidden lg:flex justify-between items-center"
-		>
-			<a
-				href=""
-				class="nav-link"
-				>Infrastructure</a
-			>
-			<a
-				href=""
-				class="nav-link"
-				>Programs</a
-			>
-			<a
-				href=""
-				class="nav-link"
-				>Placements</a
-			>
-			<a
-				href=""
-				class="nav-link"
-				>Academics</a
-			>
-			<a
-				href=""
-				class="nav-link"
-				>Research</a
-			>
-			<a
-				href=""
-				class="nav-link"
-				>News</a
-			>
-			<a
-				href=""
-				class="nav-link"
-				>Admissions</a
-			>
-		</nav>
 
 		<div
 			class="h-[100px] p-5 flex justify-center items-center fixed top-0 left-0 z-30 cursor-pointer lg:hidden"
 			onclick="toggleSidebar()"
 		>
-			<i class="bg-primary bg-opacity-50 fas fa-bars text-xl"></i>
+			<i class="bg-primary p-5 fas fa-bars text-xl"></i>
 		</div>
 
 		<div
@@ -291,20 +290,20 @@
 			</div>
 		</div>
 
-		<div
-			class="p-5 relative"
-			style="
-				background-image: url(./images/Amity-campus.jpg);
-				background-size: cover;
-				background-position: center;
-				height: 500px;
-			"
-		>
+		<div class="relative">
+			<img
+				src="images/Amity-campus.jpg"
+				alt="Amity Campus"
+				class="w-full object-cover"
+				style="filter: blur(2px)"
+			/>
 			<div
 				class="absolute top-0 left-0 w-full h-full bg-opacity-50 flex justify-center items-center"
 			>
-				<h1 class="text-white uppercase text-4xl font-bold text-center p-5">
-					Admissions open!!
+				<h1
+					class="uppercase text-4xl font-bold text-center p-5 text-black bg-white w-full"
+				>
+					Computer Science & Engineering
 				</h1>
 			</div>
 		</div>
