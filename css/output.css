@@ -660,9 +660,18 @@ video {
   margin: 100px;
 }
 
+.m-2 {
+  margin: 0.5rem;
+}
+
 .mx-10 {
   margin-left: 2.5rem;
   margin-right: 2.5rem;
+}
+
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .mx-5 {
@@ -673,6 +682,16 @@ video {
 .my-10 {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
+}
+
+.mx-20 {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+.mx-6 {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 }
 
 .ms-4 {
@@ -734,6 +753,11 @@ video {
   height: 1rem;
 }
 
+.size-5 {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
 .h-10 {
   height: 2.5rem;
 }
@@ -793,6 +817,14 @@ video {
 
 .h-full {
   height: 100%;
+}
+
+.h-20 {
+  height: 5rem;
+}
+
+.h-12 {
+  height: 3rem;
 }
 
 .max-h-96 {
@@ -892,6 +924,10 @@ video {
   grid-auto-flow: dense;
 }
 
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -979,6 +1015,16 @@ video {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
 }
 
 .rounded-full {
@@ -1369,9 +1415,50 @@ video {
   font-weight: 900;
 }
 
+.hover\:text-blue-600:hover {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
+}
+
+.focus\:text-blue-600:focus {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
+}
+
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
 @media (min-width: 640px) {
+  .sm\:m-5 {
+    margin: 1.25rem;
+  }
+
+  .sm\:mx-20 {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+
   .sm\:h-\[5rem\] {
     height: 5rem;
+  }
+
+  .sm\:h-32 {
+    height: 8rem;
+  }
+
+  .sm\:h-24 {
+    height: 6rem;
+  }
+
+  .sm\:h-16 {
+    height: 4rem;
+  }
+
+  .sm\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 
@@ -1415,5 +1502,22 @@ video {
   .lg\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .dark\:text-gray-200 {
+    --tw-text-opacity: 1;
+    color: rgb(229 231 235 / var(--tw-text-opacity));
+  }
+
+  .dark\:text-gray-600 {
+    --tw-text-opacity: 1;
+    color: rgb(75 85 99 / var(--tw-text-opacity));
+  }
+
+  .dark\:focus\:text-blue-500:focus {
+    --tw-text-opacity: 1;
+    color: rgb(59 130 246 / var(--tw-text-opacity));
   }
 }
